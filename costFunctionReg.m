@@ -15,7 +15,7 @@ function [J, grad] = costFunctionReg(theta, X, y, lambda)
     [J_star, grad_star] = costFunction(theta, X, y);
 
     %Adding the regularisation to the cost
-    J = J_star + lambda/(2*m)*sum(theta(2:end));
+    J = J_star + (lambda/(2*m))*sum(theta(2:end).^2);
 
     %Regularising the gradient. For j = 0
     grad(1) = grad_star(1);
